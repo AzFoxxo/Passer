@@ -1,3 +1,4 @@
+
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,6 +24,43 @@
                 <MenuItem Header="Add login" Click="ApplicationLoginAdd"/>
             </MenuItem>
         </Menu>
-        <TextBlock/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" MinWidth="100"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Tags Panel -->
+            <Border Grid.Column="0" 
+                    BorderBrush="{DynamicResource SystemControlHighlightBaseMediumLowBrush}"
+                    BorderThickness="0,0,1,0">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top"
+                             Text="Tags"
+                             Margin="10"
+                             FontWeight="Bold"/>
+                    <ListBox Name="TagsList"
+                            Margin="5"
+                            SelectionMode="Single">
+                        <ListBox.Items>
+                            <ListBoxItem Content="All"/>
+                            <!-- Tags will be populated from code-behind -->
+                        </ListBox.Items>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+
+            <!-- GridSplitter for resizing -->
+            <GridSplitter Grid.Column="1" 
+                         Width="4"
+                         Background="Transparent"
+                         ResizeDirection="Columns"/>
+
+            <!-- Main Content Area -->
+            <Panel Grid.Column="2">
+                <!-- Your main content will go here -->
+            </Panel>
+        </Grid>
     </DockPanel>
 </Window>

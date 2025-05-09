@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -73,6 +74,9 @@ public partial class MainWindow : Window
         var jsonString = await System.IO.File.ReadAllTextAsync(result[0]);
         _logins = System.Text.Json.JsonSerializer.Deserialize<List<Login>>(jsonString) ?? [];
         _passwordStorePath = result[0];
+        
+        // Rebuild the tag list
+        RebuildTagsList();
     }
 
     // Open the licence
@@ -106,9 +110,38 @@ public partial class MainWindow : Window
     // Add a new login
     private async void ApplicationLoginAdd(object? sender, RoutedEventArgs e)
     {
+        // Show the add login dialogue
         var dialogue = new AddLoginWindow();
     
+        // Get the login details
         var result = await dialogue.ShowDialog<Login>(this);
         _logins.Add(result);
+
+        // Rebuild the tag list
+        RebuildTagsList();
     }
+    
+    // Rebuild the tag list panel
+    private void RebuildTagsList()
+    {
+        // Get all unique tags
+        var tags = _logins
+            .SelectMany(login => login.Tags)
+            .Distinct()
+            .OrderBy(tag => tag)
+            .ToList();
+    
+        // Clear existing items except "All"
+        while (TagsList.Items.Count > 1)
+        {
+            TagsList.Items.RemoveAt(1);
+        }
+    
+        // Add tags to list
+        foreach (var tag in tags)
+        {
+            TagsList.Items.Add(new ListBoxItem { Content = tag });
+        }
+    }
+    
 }
