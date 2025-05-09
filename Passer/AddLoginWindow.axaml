@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Passer.AddLoginWindow"
+        Title="Add login"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        Padding="10"
+        SizeToContent="WidthAndHeight">
+
+    <StackPanel Spacing="10">
+        <!-- URL -->
+        <StackPanel>
+            <TextBlock Text="URL:"/>
+            <TextBox x:Name="UrlField" Width="300"/>
+        </StackPanel>
+
+        <!-- Email/Username -->
+        <StackPanel>
+            <TextBlock Text="Email / Username:"/>
+            <TextBox x:Name="EmailUsernameField" Width="300"/>
+        </StackPanel>
+
+        <!-- Password -->
+        <StackPanel>
+            <TextBlock Text="Password:"/>
+            <TextBox x:Name="PasswordField" Width="300" PasswordChar="●"/>
+        </StackPanel>
+
+        <!-- Tags -->
+        <StackPanel>
+            <TextBlock Text="Tags (comma-separated):"/>
+            <TextBox x:Name="TagsField" Width="300"/>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,10,0,0">
+            <Button x:Name="AddButton" Content="Add" Click="Add"/>
+            <Button x:Name="CancelButton" Content="Cancel" Click="Cancel"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

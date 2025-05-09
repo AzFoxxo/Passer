@@ -103,18 +103,12 @@ public partial class MainWindow : Window
 
     }
 
-    private void ApplicationLoginAdd(object? sender, RoutedEventArgs e)
+    // Add a new login
+    private async void ApplicationLoginAdd(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
-    }
-
-    private void ApplicationLoginEdit(object? sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void ApplicationLoginDelete(object? sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
+        var dialogue = new AddLoginWindow();
+    
+        var result = await dialogue.ShowDialog<Login>(this);
+        _logins.Add(result);
     }
 }

@@ -21,8 +21,6 @@
             </MenuItem>
             <MenuItem Header="Logins">
                 <MenuItem Header="Add login" Click="ApplicationLoginAdd"/>
-                <MenuItem Header="Edit login" Click="ApplicationLoginEdit"/>
-                <MenuItem Header="Delete login" Click="ApplicationLoginDelete"/>
             </MenuItem>
         </Menu>
         <TextBlock/>
