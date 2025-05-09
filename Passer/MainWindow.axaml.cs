@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -74,19 +75,32 @@ public partial class MainWindow : Window
         _passwordStorePath = result[0];
     }
 
+    // Open the licence
     private void ApplicationLicence(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "https://github.com/AzFoxxo/Passer/blob/main/LICENSE",
+            UseShellExecute = true
+        });
     }
 
-    private void ApplicationAbout(object? sender, RoutedEventArgs e)
+    // Show the about dialogue with the version number and info
+    private async void ApplicationAbout(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        var dialogue = new AboutDialogue();
+        await dialogue.ShowDialog(this);
     }
 
+    // Open the website
     private void ApplicationHomePage(object? sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "http://github.com/azfoxxo/passer",
+            UseShellExecute = true
+        });
+
     }
 
     private void ApplicationLoginAdd(object? sender, RoutedEventArgs e)

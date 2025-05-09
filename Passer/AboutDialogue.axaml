@@ -1,0 +1,15 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Passer.AboutDialogue"
+        Title="About"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        Padding="10"
+        SizeToContent="WidthAndHeight">
+
+    <StackPanel Spacing="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="AppName" FontSize="16" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock x:Name="VersionText" TextAlignment="Center"/>
+        <TextBlock Text="A simple password store written in Avalonia." TextAlignment="Center"/>
+    </StackPanel>
+</Window>
