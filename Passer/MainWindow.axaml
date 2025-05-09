@@ -8,21 +8,21 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Save"/>
-                <MenuItem Header="Save As"/>
-                <MenuItem Header="Load"/>
+                <MenuItem Header="Save" Click="ApplicationSave"/>
+                <MenuItem Header="Save As" Click="ApplicationSaveAs"/>
+                <MenuItem Header="Load" Click="ApplicationLoad"/>
                 <Separator/>
-                <MenuItem Header="Quit"/>
+                <MenuItem Header="Quit" Click="ApplicationQuit"/>
             </MenuItem>
             <MenuItem Header="About">
-                <MenuItem Header="Licence"/>
-                <MenuItem Header="About"/>
-                <MenuItem Header="Link"/>
+                <MenuItem Header="Licence" Click="ApplicationLicence"/>
+                <MenuItem Header="About" Click="ApplicationAbout"/>
+                <MenuItem Header="Home Page" Click="ApplicationHomePage"/>
             </MenuItem>
             <MenuItem Header="Logins">
-                <MenuItem Header="Add login"/>
-                <MenuItem Header="Edit login"/>
-                <MenuItem Header="Delete login"/>
+                <MenuItem Header="Add login" Click="ApplicationLoginAdd"/>
+                <MenuItem Header="Edit login" Click="ApplicationLoginEdit"/>
+                <MenuItem Header="Delete login" Click="ApplicationLoginDelete"/>
             </MenuItem>
         </Menu>
         <TextBlock/>
