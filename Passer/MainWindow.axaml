@@ -5,5 +5,26 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Passer.MainWindow"
         Title="Passer">
-    Welcome to Avalonia!
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Save As"/>
+                <MenuItem Header="Load"/>
+                <Separator/>
+                <MenuItem Header="Quit"/>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="Licence"/>
+                <MenuItem Header="About"/>
+                <MenuItem Header="Link"/>
+            </MenuItem>
+            <MenuItem Header="Logins">
+                <MenuItem Header="Add login"/>
+                <MenuItem Header="Edit login"/>
+                <MenuItem Header="Delete login"/>
+            </MenuItem>
+        </Menu>
+        <TextBlock/>
+    </DockPanel>
 </Window>
